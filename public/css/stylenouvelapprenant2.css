@@ -1,0 +1,134 @@
+.apprenant-modal {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+.form-apprenant {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    justify-content: space-between;
+  }
+
+  .form-apprenant .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+  }
+
+  .form-apprenant button:nth-child(2) {
+    margin-left: 1%;
+  }
+
+  .form-apprenant header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 8px;
+    color: #6d5f7b;
+    button {
+      background-color: #f5f5f5;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1.5rem;
+      border-radius: 5px;
+    }
+  }
+
+  .form-apprenant .middle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    input{
+        outline: none;
+        padding: .75rem;
+        border-radius: 5px;
+        border: 1px solid #f5f5f5;
+    }
+    label{
+        margin-bottom: 4px;
+    }
+  }
+
+  .form-apprenant .cercle {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #018f88;
+    position: relative;
+    z-index: 2;
+  }
+
+  .form-apprenant .top{
+    display: flex;
+    width: 100%;
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+  }
+
+  .form-apprenant hr{
+    flex: 1;
+    width: 100%;
+    margin: 0 1rem;
+    height: 0;
+    align-self: center;
+  }
+
+  .form-apprenant .flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 25%;
+    margin: 1%;
+    font-size: 1vw;
+  }
+  .form-apprenant .flex-col input{
+    width: 100%;
+    height: 90%;
+    border: #333333 1px solid;
+    font-size: 1vw;
+  }
+
+  .form-apprenant .bottom{
+    display: flex;
+    justify-content: flex-end;
+    button{
+     background-color: #f5f5f5;
+     border: none;
+     padding: 1.5% 3%;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 1vw;
+     &:nth-child(2){
+      background-color: #018f88;
+         color: white;
+     }
+   }
+  }
+  .form-apprenant .bottom button a{
+    text-decoration: none;
+    color: black;
+  }

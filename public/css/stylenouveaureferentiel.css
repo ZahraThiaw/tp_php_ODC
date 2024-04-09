@@ -1,0 +1,141 @@
+.nouveaureferentiels{
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+.nouveaureferentiels .promonouveaureferentiels{ 
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.nouveaureferentiels .promonouveaureferentiels .promosnouveaureferentiels{
+    font-size: 1vw;
+}
+.nouveaureferentiels .bodynouveaureferentiels{
+    height : 100%;
+    display: flex;
+    background-color: #fff;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 3%;
+    padding-bottom: 6%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .numeronouveaureferentiels{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.nouveaureferentiels .bodynouveaureferentiels .numeronouveaureferentiels .numero1nouveaureferentiels{
+    width: 3vw;
+    height: 3vw;
+    background-color: #008F89;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: #fff;
+}
+.nouveaureferentiels .bodynouveaureferentiels .numeronouveaureferentiels .traitnouveaureferentiels{
+    width: 0.1vw;
+    height: 14%;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%
+}
+.nouveaureferentiels .bodynouveaureferentiels .numeronouveaureferentiels .numero2nouveaureferentiels{
+    width: 3vw;
+    height: 3vw;
+    color: #fff;
+    background-color: #008F89;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .bodynouveaureferentielsdroit{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .bodynouveaureferentielsdroit .bodynouveaureferentielsdroit1{
+    margin-top: 0;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .bodynouveaureferentielsdroit .bodynouveaureferentielsdroit2{
+    margin-top: 25%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection span{
+    color: #222222;
+    margin-bottom: 8%;
+    font-size: 1vw;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection div{
+    margin-top: 1%;
+    width: 100%;
+    height: 8%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection div input{
+    font-size: 5vw;
+    margin-left: 2%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection div label{
+    font-size: 1vw;
+    color: rgb(83, 83, 83);
+    margin-left: 2%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection .button{
+    display: flex;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection .button form{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection .button form button{
+    width: 100%;
+    height: 100%;
+    font-size: 1vw;
+    background-color: #e6eeee;
+    color: #000;
+    border: rgb(250, 253, 252) 1px solid;
+    border-radius: 5px;
+    margin-right: 5%;
+}
+.nouveaureferentiels .bodynouveaureferentiels .bodynouveaureferentielsdroittout .selection .button button{
+    width: 30%;
+    height: 100%;
+    font-size: 1vw;
+    background-color: #008F89;
+    color: #fff;
+    border: #027e78 1px solid;
+    border-radius: 5px;
+}

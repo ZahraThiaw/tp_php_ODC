@@ -1,0 +1,194 @@
+.contenupromotions{
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+.contenupromotions .promo{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+}
+.contenupromotions .promo .promos{
+    font-size: 1vw;
+}
+.contenupromotions .bodynouveaupromo{
+    height : 100%;
+    display: flex;
+    background-color: #fff;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.contenupromotions .bodynouveaupromo .numeronouveaupromo{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contenupromotions .bodynouveaupromo .numeronouveaupromo .numero1nouveaupromo{
+    width: 3vw;
+    height: 3.8vw;
+    background-color: #008F89;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #fff;
+}
+.contenupromotions .bodynouveaupromo .numeronouveaupromo .trait{
+    width: 0.1vw;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%
+}
+.contenupromotions .bodynouveaupromo .numeronouveaupromo .numero2nouveaupromo{
+    width: 3vw;
+    height: 3.8vw;
+    color: #008F89;
+    background-color: rgb(237, 247, 248);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit{
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit2{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit2 label{
+    font-size: 1.2vw;
+}
+.concontenupromotionstenu .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit2 input{
+    font-size: 1.2vw;
+    background-color: transparent;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding-left: 8%;
+    color: #6d6d6d;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3 .datedebut{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 1%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3 .datedebut label{
+    font-size: 1.2vw;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3 .datedebut input{
+    font-size: 1.2vw;
+    background-color: transparent;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding-left: 8%;
+    color: #6d6d6d;
+    text-transform: uppercase;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3 .datefin{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 1%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3 .datefin label{
+    font-size: 1.2vw;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3 .datefin input{
+    font-size: 1.2vw;
+    background-color: transparent;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding-left: 8%;
+    color: #6d6d6d;
+    text-transform: uppercase;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 form{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 form button{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    font-size: 1vw;
+    font-weight: bold;
+    background-color: #0514e6;
+    color: #fff;
+    border: #0411ca 1px solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 button{
+    width: 20%;
+    height: 100%;
+    font-size: 1vw;
+    font-weight: bold;
+    background-color: #008F89;
+    color: #fff;
+    border: #027e78 1px solid;
+    border-radius: 5px;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit5{
+    margin-top: 1%;
+}

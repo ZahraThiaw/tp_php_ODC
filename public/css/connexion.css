@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        .containerconnexion{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(241, 241, 241);
+            font-family: 'Roboto', sans-serif;
+        }
+        .containerconnexion img{
+            width: 10%;
+            margin-bottom: 1%;
+            margin-left: -15%;
+        }
+        .containerconnexion form{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: 45%;
+            justify-content: space-between;
+        }
+        .containerconnexion form .infoslogin{
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 3%;
+            height: 73%;
+            position: relative;
+        }
+        .containerconnexion form .infoslogin div{
+            height: 20%;
+            border-radius: 10px;
+            border: 1px solid rgb(243, 159, 159);
+            background-color: rgb(250, 192, 192);
+            display: flex;
+            align-items: center;
+        }
+        .containerconnexion form .infoslogin div p{
+            color: red;
+            padding-left: 2%;
+            font-size: 0.9vw;
+        }
+        .containerconnexion form .infoslogin label{
+            margin-top: 2%;
+            margin-bottom: 2%;
+            font-size: 1.5vw;
+        }
+        .containerconnexion form .infoslogin label span{
+            color: red;
+        }
+        .containerconnexion form .infoslogin input{
+            height: 20%;
+            border-radius: 10px; 
+            border: 1px solid #000;
+            background-color: #fff;
+            color: rgb(161, 156, 156);
+            padding-left: 2%;
+            font-size: 0.9vw;
+            cursor: pointer;
+        }
+        .containerconnexion form .infoslogin i{
+            position: absolute;
+            right: 5%;
+            bottom: 12%;
+            font-size: 1vw;
+
+        }
+        .containerconnexion form .sauvegarde{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 2%;
+            padding-right: 2%;
+            font-size: 1vw;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+        .containerconnexion form .sauvegarde label{
+            color: rgb(161, 156, 156);
+        }
+        .containerconnexion form .sauvegarde p{
+            color: #008F89;
+        }
+    
+        .containerconnexion form .connecter{
+            display: flex;
+            justify-content: center;
+            height: 12%;
+        }
+        .containerconnexion form .connecter button{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            border: 1px solid #02837c;;
+            background-color: #008F89;
+            color: white;
+            font-weight: bold;
+            font-size: 1vw;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
