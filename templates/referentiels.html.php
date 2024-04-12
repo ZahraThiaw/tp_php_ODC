@@ -5,7 +5,7 @@
             </div>
             <div class="bodyreferentiels">
                 <div class="referentielsreferentiels">
-                    <?php foreach($referentiels as $referentiel): ?>
+                    <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
                     <div class="referentiel">
                         <span class="troispoint">...</span>
                         <img src="../public/images/classe.jpeg" alt="classe">

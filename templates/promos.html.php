@@ -26,16 +26,20 @@
                                 <th>Libelle</th>
                                 <th>Date Début</th>
                                 <th>Date Fin</th>
+                                <th>Etat</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($promos as $promo): ?>
                             <tr>
-                                <td class="img"><img src="images/promos.png" alt=""> <span>Promotion 6</span></td>
-                                <td>2024-02-01</td>
-                                <td>2024-11-01</td>
+                                <td class="img"><img src="images/promos.png" alt=""> <span><?=$promo['libelle']?></span></td>
+                                <td><?= $promo['datedebut'] ?></td>
+                                <td><?= $promo['datefin'] ?></td>
+                                <td style="color : <?= $promo['etat'] == "Terminée" ? "red" : "green" ?> ";><?= $promo['etat'] ?></td>
                                 <td><input type="checkbox" name="" id=""></td>
                             </tr>
+                            <?php endforeach; ?>
                         </tbody>
                         <tfoot>
                         </tfoot>
@@ -51,7 +55,31 @@
                             </select>
                         </div>
                         <div class="itemspage">
-                            <span class="numeropage">1-1 of 1 </span>  <span class="suiv"> <span>|<</span> <span> < </span> > <span></span><span> >|</span> </span> 
+                            <span class="numeropage">1-1 of 1 </span> 
+                            <span id="numview"></span>
+                            <form action="" method="post">
+                            <input type="hidden" name="page" value="promos">
+                            <input type="hidden" name="currentpage" value="1">
+                            <button type="submit">I<i class="fa-solid fa-chevron-left"></i></button>
+                            </form>
+
+                            <form action="" method="post">
+                            <input type="hidden" name="page" value="promos">
+                            <input type="hidden" name="currentpage" value="<?= $currentpage -1 ?>">
+                            <button type="submit"><i class="fa-solid fa-chevron-left"></i></button>
+                            </form>
+
+                            <form action="" method="post">
+                            <input type="hidden" name="page" value="promos">
+                            <input type="hidden" name="currentpage" value="<?= $currentpage +1 ?>">
+                            <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                            </form>
+
+                            <form action="" method="post">
+                            <input type="hidden" name="page" value="promos">
+                            <input type="hidden" name="currentpage" value="<?= $totalPages ?>">
+                            <button type="submit"><i class="fa-solid fa-chevron-right"></i>I</button>
+                            </form>
                         </div>
                     </div>
                 

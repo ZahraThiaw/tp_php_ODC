@@ -31,7 +31,9 @@
                             <div class="filter">
                                 <form action="" method="post">
                                   <i class="fa-solid fa-magnifying-glass"></i>
-                                  <input type="text" placeholder="Filtrer" name="search">
+                                  <input type="hidden" name="page" value="motfiltre">
+                                  <input type="search" name="recherchefiltre" id="filtrer" placeholder="Filtrer" <?= isset($_POST['recherchefiltre']) ? 'value="' . $_POST['recherchefiltre'] . '"' : '' ?>>
+                      
                                 </form>
                             </div>
                             <div class="logo1" >

@@ -140,21 +140,31 @@
     flex-wrap: wrap;
     overflow: hidden;
 }
+.pagination {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .7em;
+    margin: 1%;
+}
+.pagination span{
+    font-size: 1vw;
+}
 .navigation {
-    
     background-color: transparent;
     font-size: 1rem;
     position: relative;
     display: flex;
-    left: 55%;
     height: 100%;
-    width: 33%;
+    width: 20%;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
     font-size: 1em;
 }
-.navigation>button {
+.navigation form button {
     height: 1.1rem;
     width: 1.1rem;
     background-color: transparent;

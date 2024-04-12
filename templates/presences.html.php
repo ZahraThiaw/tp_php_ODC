@@ -24,7 +24,7 @@
                         <Option value="Hackeuse" <?= $_SESSION['referentiel']== "Hackeuse" ? "selected" : ""?>>Hackeuse</Option>
                     </select>
                 </div>
-                <input type="date" id="datechoice" placeholder="JJ/MM/AAAA">
+                <input name="date" type="date" id="date" placeholder="AAAA/MM/JJ" value="<?= isset($_SESSION['date']) ? $_SESSION['date'] : date('Y-m-d'); ?>">
 
                 <input type="hidden" name="page">
                 <input type="hidden" name="filtre" value="filtre">
@@ -43,7 +43,7 @@
                     <th>Heure d'arrivée</th>
                     <th>Status</th>
                 </tr>
-                <?php   foreach($studentpresents as $studentspresent): ?> 
+                <?php  foreach($paginationpresence as $studentspresent): ?> 
                     <?php //foreach($presencesPaginees as $studentspresent): ?>
 
                 <tr>
@@ -59,68 +59,48 @@
             </table>
         </div>
         <div class="footer-presence">
+        <div class="pagination">
 
-        <?php foreach ($presenceOnPage as $pagination): ?>
-
-            <div class="pagination">
-                <span>Page <?= $pagination['currentPage'] ?> - <?= $pagination['totalPages'] ?></span>
-                <form action="" method="post">
-                    <input type="hidden" name="pages">
-                    <input type="hidden" name="prevPage" value="prevPage">
-                    <button <?= $pagination['prevPage'] ?>><i class="fa-solid fa-chevron-left"></i></button>
-                </form>
-                <form action="" method="post">
-                    <input type="hidden" name="pages">
-                    <input type="hidden" name="nextPage" value="nextPage">
-                    <button <?= $pagination['nextPage'] ?>> <i class="fa-solid fa-chevron-right"></i></button>
-                </form>
-                
+            <div class="itemspages">
+                <span style="font-weight: 100; color: rgb(54, 54, 54); position: relative; left: 0.1%;">Items par page: </span>
+                <select name="itemsperpage" id="itemsperpage">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="4">5</option>
+                </select>
             </div>
 
-        <?php endforeach; ?>
-        <!-- <form action="" method="post">
-            <span style="font-weight: 100; color: rgb(54, 54, 54); position: relative; left: 0.1%;">Items per page: </span>
-            <select name="itemsperpage" id="itemsperpage">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="4">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-            
             <div class="navigation">
-                <span id="numview"><?php //echo ($numero_page - 1) * $etudiants_par_page + 1; ?> - <?php //echo min($numero_page * $etudiants_par_page, count($etudiants)); ?> of <?php echo count($etudiants); ?></span>
-                <button type="submit" name="action" value="first">I<i class="fa-solid fa-chevron-left"></i></button>
-                <button type="submit" name="action" value="previous"><i class="fa-solid fa-chevron-left"></i></button>
-                <button type="submit" name="action" value="next"><i class="fa-solid fa-chevron-right"></i></button>
-                <button type="submit" name="action" value="last"><i class="fa-solid fa-chevron-right"></i>I</button>
+                <span></span>
+
+                <span id="numview"></span>
+                <form action="" method="post">
+                <input type="hidden" name="page" value="presences">
+                <input type="hidden" name="currentpage" value="1">
+                <button type="submit">I<i class="fa-solid fa-chevron-left"></i></button>
+                </form>
+
+                <form action="" method="post">
+                <input type="hidden" name="page" value="presences">
+                <input type="hidden" name="currentpage" value="<?= $currentpage -1 ?>">
+                <button type="submit"><i class="fa-solid fa-chevron-left"></i></button>
+                </form>
+
+                <form action="" method="post">
+                <input type="hidden" name="page" value="presences">
+                <input type="hidden" name="currentpage" value="<?= $currentpage +1 ?>">
+                <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                </form>
+
+                <form action="" method="post">
+                <input type="hidden" name="page" value="presences">
+                <input type="hidden" name="currentpage" value="<?= $totalPages ?>">
+                <button type="submit"><i class="fa-solid fa-chevron-right"></i>I</button>
+                </form>
             </div>
-        </form> -->
-
-            <?php //if ($pages > 1) : ?>
-                <!-- <a href="?page=pre&pages=<?php //echo ($pages - 1) ?>"><</a> -->
-                <!-- <form action="" method="post">
-                        <input type="hidden" name="page" value="presences">
-                        <button type="submit">Presences</button>
-                </form> -->
-                <?php //endif ?>
-                <?php //for ($i = 1; $i <= ceil(count($listes,) / $elementsParPage); $i++) : ?>
-                    <!-- <a href="?page=pre&pages=<?php //echo $i ?>" <?php //if ($i == $pages) echo 'style="font-weight:bold;"' ?>><?php //echo $i ?></a> -->
-                <?php //endfor ?>
-                <?php //if ($pages >= ceil(count($listes,) / $elementsParPage)) : ?>
-                    <!-- <a href="?page=pre&pages=<?php //echo ($pages + 1) ?>">></a> -->
-                <?php //endif 
-            ?>
+            
         </div>
-
     </div>
-
-
-
-           
 </div>

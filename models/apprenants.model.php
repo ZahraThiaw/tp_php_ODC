@@ -46,28 +46,8 @@ function findAllStudents(){
             "email" => 'mbowbayesaer44@gmail.com',
             "genre" => 'M',
             "telephone" => '777930609',
-        ], 
-        [ 
-            "nom" => 'Wade',
-            "prenom" => 'Aldemba',
-            "email" => 'Ldmbwade@gmail.com',
-            "genre" => 'M',
-            "telephone" => '772716990',
-        ],
-        [ 
-            "nom" => 'Diagne',
-            "prenom" => 'Mouhamadou Moustapha',
-            "email" => 'mousdef34@gmail.com',
-            "genre" => 'M',
-            "telephone" => '785953562',
-        ],
-        [ 
-            "nom" => 'Sow',
-            "prenom" => 'Mouhamadou Bobo',
-            "email" => 'mbowbayesaer44@gmail.com',
-            "genre" => 'M',
-            "telephone" => '777930609',
         ]
+        
     ];
 
     return $student;

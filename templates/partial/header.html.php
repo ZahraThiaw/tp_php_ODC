@@ -7,8 +7,11 @@
         </div>
         <div class="iconegrid"><img src="../public/images/menu.png" alt=""></div>
         <div class="barrederecherche">
-            <input type="text" name="barrederecherche" id="barrederecherche" placeholder="Rechercher par matricule">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <form action="" method="post">
+                <input type="hidden" name="page" value="mot">
+                <input type="search" name="recherche" id="barrederecherche" placeholder="Rechercher par matricule" <?= isset($_POST['recherche']) ? 'value="' . $_POST['recherche'] . '"' : '' ?>>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
         </div>
     </div>
     <div class="headpromodroit">
