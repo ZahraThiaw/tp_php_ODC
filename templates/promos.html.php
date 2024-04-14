@@ -46,41 +46,45 @@
                         
                     </table>
                     <div class="itemspromos">
-                        <div class="itemsparpage">
-                            <span>Items par page</span>
-                            <select name="" id="">
-                                <option value="">10</option>
-                                <option value="">20</option>
-                                <option value="">30</option>
-                            </select>
-                        </div>
-                        <div class="itemspage">
-                            <span class="numeropage">1-1 of 1 </span> 
-                            <span id="numview"></span>
-                            <form action="" method="post">
-                            <input type="hidden" name="page" value="promos">
-                            <input type="hidden" name="currentpage" value="1">
-                            <button type="submit">I<i class="fa-solid fa-chevron-left"></i></button>
-                            </form>
+                            <div class="itemspages">
+                                <span style="font-weight: 100; color: rgb(54, 54, 54); position: relative; left: 0.1%;">Articles par page : </span>
+                                <select name="itemsperpage" id="itemsperpage">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
 
-                            <form action="" method="post">
-                            <input type="hidden" name="page" value="promos">
-                            <input type="hidden" name="currentpage" value="<?= $currentpage -1 ?>">
-                            <button type="submit"><i class="fa-solid fa-chevron-left"></i></button>
-                            </form>
+                            <div class="navigation">
+                                <span></span>
+                                <span id="numview"></span>
+                                <form action="" method="post">
+                                    <input type="hidden" name="page" value="promos">
+                                    <input type="hidden" name="currentpagepromo" value="1">
+                                    <button type="submit">I<i class="fa-solid fa-chevron-left"></i></button>
+                                </form>
 
-                            <form action="" method="post">
-                            <input type="hidden" name="page" value="promos">
-                            <input type="hidden" name="currentpage" value="<?= $currentpage +1 ?>">
-                            <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
-                            </form>
+                                <form action="" method="post">
+                                    <input type="hidden" name="page" value="promos">
+                                    <input type="hidden" name="currentpagepromo" value="<?= max($currentpagepromo - 1, 1) ?>">
+                                    <button type="submit"><i class="fa-solid fa-chevron-left"></i></button>
+                                </form>
 
-                            <form action="" method="post">
-                            <input type="hidden" name="page" value="promos">
-                            <input type="hidden" name="currentpage" value="<?= $totalPages ?>">
-                            <button type="submit"><i class="fa-solid fa-chevron-right"></i>I</button>
-                            </form>
-                        </div>
+                                <form action="" method="post">
+                                    <input type="hidden" name="page" value="promos">
+                                    <input type="hidden" name="currentpagepromo" value="<?= min($currentpagepromo + 1, $totalPagespromo) ?>">
+                                    <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                                </form>
+
+                                <form action="" method="post">
+                                    <input type="hidden" name="page" value="promos">
+                                    <input type="hidden" name="currentpagepromo" value="<?= $totalPagespromo ?>">
+                                    <button type="submit"><i class="fa-solid fa-chevron-right"></i>I</button>
+                                </form>
+                            </div>
+                    
                     </div>
                 
                 </div>

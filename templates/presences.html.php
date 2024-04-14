@@ -62,42 +62,41 @@
         <div class="pagination">
 
             <div class="itemspages">
-                <span style="font-weight: 100; color: rgb(54, 54, 54); position: relative; left: 0.1%;">Items par page: </span>
+                <span style="font-weight: 100; color: rgb(54, 54, 54); position: relative; left: 0.1%;">Articles par page : </span>
                 <select name="itemsperpage" id="itemsperpage">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="4">5</option>
+                    <option value="5">5</option>
                 </select>
             </div>
 
             <div class="navigation">
                 <span></span>
-
                 <span id="numview"></span>
                 <form action="" method="post">
-                <input type="hidden" name="page" value="presences">
-                <input type="hidden" name="currentpage" value="1">
-                <button type="submit">I<i class="fa-solid fa-chevron-left"></i></button>
+                    <input type="hidden" name="page" value="presences">
+                    <input type="hidden" name="currentpagepresent" value="1">
+                    <button type="submit">I<i class="fa-solid fa-chevron-left"></i></button>
                 </form>
 
                 <form action="" method="post">
-                <input type="hidden" name="page" value="presences">
-                <input type="hidden" name="currentpage" value="<?= $currentpage -1 ?>">
-                <button type="submit"><i class="fa-solid fa-chevron-left"></i></button>
+                    <input type="hidden" name="page" value="presences">
+                    <input type="hidden" name="currentpagepresent" value="<?= max($currentpagepresent - 1, 1) ?>">
+                    <button type="submit"><i class="fa-solid fa-chevron-left"></i></button>
                 </form>
 
                 <form action="" method="post">
-                <input type="hidden" name="page" value="presences">
-                <input type="hidden" name="currentpage" value="<?= $currentpage +1 ?>">
-                <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
+                    <input type="hidden" name="page" value="presences">
+                    <input type="hidden" name="currentpagepresent" value="<?= min($currentpagepresent + 1, $totalPagespresent) ?>">
+                    <button type="submit"><i class="fa-solid fa-chevron-right"></i></button>
                 </form>
 
                 <form action="" method="post">
-                <input type="hidden" name="page" value="presences">
-                <input type="hidden" name="currentpage" value="<?= $totalPages ?>">
-                <button type="submit"><i class="fa-solid fa-chevron-right"></i>I</button>
+                    <input type="hidden" name="page" value="presences">
+                    <input type="hidden" name="currentpagepresent" value="<?= $totalPagespresent ?>">
+                    <button type="submit"><i class="fa-solid fa-chevron-right"></i>I</button>
                 </form>
             </div>
             

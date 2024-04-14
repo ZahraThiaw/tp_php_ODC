@@ -51,25 +51,39 @@
                 };
               
 
+                $elementparpagepromo=2;
+                $currentpagepromo=1;
+                $totalItemspromo = count($promos);
+                $totalPagespromo = ceil($totalItemspromo / $elementparpagepromo);
+                $paginationpromo=paginateTable($promos, $elementparpagepromo, $currentpagepromo);
+                
+
+
+                if(isset($_POST['currentpagepromo'])){
+                
+                    $currentpagepromo = $_POST['currentpagepromo'];
+                    $paginationpromo = paginateTable($promos, $elementparpagepromo, $currentpagepromo);
+                        
+                }
+
+
                 $studentpresent = generateStudentspresents();
 
                 // Par défaut, afficher les présences de la date du jour
                 $date = date("Y-m-d"); // Obtient la date du jour au format YYYY-MM-DD
                 $filteredPresences = filter_presence('statuts', 'referentiel', $date); // Filtrer par date du jour
                 $elementparpagepresent=2;
-                $currentpage=1;
-                $totalItems = count($filteredPresences);
-                $totalPages = ceil($totalItems / $elementparpagepresent);
-                $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpage);
-                //  var_dump($paginationpresence);
-                // die();
+                $currentpagepresent=1;
+                $totalItemspresent = count($filteredPresences);
+                $totalPagespresent = ceil($totalItemspresent / $elementparpagepresent);
+                $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
+            
 
 
-                if(isset($_POST['currentpage'])){
-                //     var_dump($_POST['currentpage']);
-                // die();
-                    $currentpage = $_POST['currentpage'];
-                    $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpage);
+                if(isset($_POST['currentpagepresent'])){
+                
+                    $currentpagepresent = $_POST['currentpagepresent'];
+                    $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
                         
                 }
 
@@ -79,7 +93,7 @@
                     include("../templates/" . $_POST['page'] . ".html.php");
                     $_SESSION['page'] = $_POST['page'];
 
-                }else 
+                }
                   
                 if(isset($_POST['filtre']) && $_POST['filtre'] == 'filtre'){
                     $status = $_POST['statuts'];
@@ -87,23 +101,23 @@
                     $date = $_POST['date'];
                     //$studentpresents = filter_presence($status, $referentiel, $date);
                     // Pour filtrer les présences pour le statut "ABSENT", le référentiel "Référent Digital" et la date "2024-04-09"
-                    $filteredPresences = filter_presence($status, $referentiel, $date);
-                    $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpage);
-                //  var_dump($paginationpresence);
-                // die();
-
-
-                    if(isset($_POST['currentpage'])){
-                    // var_dump($_POST['currentpage']);
-                    // die();
-                        $currentpage = $_POST['currentpage'];
-                        $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpage);
-                            
-                    }
                     $_SESSION['statuts']= $status;
                     $_SESSION['referentiel']=$referentiel;
                     $_SESSION['date']= $date;
-                    include("../templates/presences.html.php");
+
+
+                    $filteredPresences = filter_presence($status, $referentiel, $date);
+                    $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
+                
+
+
+                    if(isset($_POST['currentpagepresent'])){
+                    
+                        $currentpagepresent = $_POST['currentpagepresent'];
+                        $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
+                            
+                    }
+                    require_once("../templates/presences.html.php");
 
                 }
 
