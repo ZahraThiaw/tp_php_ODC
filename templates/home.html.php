@@ -20,6 +20,10 @@
             <div class="bodycontenu">
                 
                 <?php
+                require_once("../config/helpers.php");
+
+                require_once("../config/bootstrap.php");
+                require_once("../data/file.csv.php");
                 require_once("../models/apprenants.model.php");
                 $students = findAllStudents();
 
@@ -27,8 +31,8 @@
                 require_once("../models/presences.model.php");
                 require_once("../models/referentiels.model.php");
                 require_once("../models/promos.model.php");
-
                 $promos = findAllPromos();
+
                 $currentPromo = null;
                 // Trouver la promotion en cours
                 foreach($promos as $promo) {
@@ -44,8 +48,7 @@
                         return $referentiel['idpromo'] === $currentPromo['idpromo'] && $referentiel['etatreferentiel'] === 'Active';
                     });
 
-                    
-                }
+                };
               
 
                 $studentpresent = generateStudentspresents();
@@ -53,7 +56,7 @@
                 // Par défaut, afficher les présences de la date du jour
                 $date = date("Y-m-d"); // Obtient la date du jour au format YYYY-MM-DD
                 $filteredPresences = filter_presence('statuts', 'referentiel', $date); // Filtrer par date du jour
-                $elementparpagepresent=3;
+                $elementparpagepresent=2;
                 $currentpage=1;
                 $totalItems = count($filteredPresences);
                 $totalPages = ceil($totalItems / $elementparpagepresent);
@@ -117,7 +120,6 @@
                     require_once("../templates/utilisateurs.html.php");
                 }
                 
-
                 ?>
             </div>
             <?php

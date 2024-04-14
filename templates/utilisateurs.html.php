@@ -5,10 +5,18 @@
                     </div>
                     <div class="container2">
                         <div class="span">
-                        <h3>Promotion: <span style="color: #088F89;">Promotion 6</span></h3> 
+                          <h3>Promotion: <span style="color: #088F89;"><?= $currentPromo['libelle'] ?></span></h3> 
                         </div>
                         <div class="span">
-                        <h3>Référentiel: <span style="color: #088F89;">Dev Web/mobile</span></h3> 
+                          <h3>Référentiel: 
+                            <span style="color: #088F89;">
+                              <select style="color: #088F89;" name="" id="">
+                                    <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
+                                      <option value="<?= $referentiel['referentiel'] ?>"><span class="nomreferentiel"><?= $referentiel['referentiel'] ?></span></option>
+                                    <?php endforeach; ?>
+                              </select>
+                            </span>
+                          </h3> 
                         </div>
                     </div>
                     <div class="container3">

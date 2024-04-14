@@ -28,8 +28,11 @@
     padding: 2%;
     margin-bottom: 1%;
 }
-.container2 .span h2 span{ 
-    color: #008F89;
+.container2 .span h3 span select{ 
+    border: none;
+    background-color: transparent;
+    font-size: 1vw;
+    outline: none;
 }
 
 .container3{
