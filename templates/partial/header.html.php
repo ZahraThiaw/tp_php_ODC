@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="headpromodroit">
-        <div class="date"><i class="fa-solid fa-calendar-days"></i> 20 March 2024</div>
+        <div class="date"><i class="fa-solid fa-calendar-days"></i> <?= date('d/m/Y') ?></div>
         <div class="utilisateur">
             <div class="profileuser"><i class="fa-solid fa-user"></i></div>
             <div class="users">

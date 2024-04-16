@@ -33,6 +33,7 @@
                 require_once("../models/promos.model.php");
                 $promos = findAllPromos();
 
+
                 $currentPromo = null;
                 // Trouver la promotion en cours
                 foreach($promos as $promo) {
@@ -49,7 +50,54 @@
                     });
 
                 };
-              
+
+                if(isset($_POST['changePromo']) && $_POST['changePromo'] !=''){
+                    $idpromo = $_POST['changePromo'];
+                    promotionCheck($currentPromo['idpromo'], $idpromo);
+                    $currentPromo['idpromo'] = $idpromo;
+                    $promos = findAllPromos();
+                }
+
+                
+                $currentreferentiel=null;
+                //Trouver les referentiels actifs pour la promo en cours
+                foreach($referentielsForCurrentPromo as $referentiel){
+                    $currentreferentiel=$referentiel;
+                    break;
+                }
+
+
+                if($currentreferentiel){
+                    $apprenants = findAllStudents();
+                    // Filtrer les apprenants pour les referentiel actifs de la promotion en cours
+                    $apprenantsForCurrentPromo = array_filter($apprenants, function($apprenant) use ($currentreferentiel) {
+                        return $apprenant['idpromo'] === $currentreferentiel['idpromo'];
+                    });
+                }
+
+
+                if(isset($_POST['appreferentiel'] )) {
+                  //  dd($_POST['referentiel']);
+                    $selectedReferentiel = $_POST['appreferentiel'];
+                    $_SESSION['appreferentiel']= $selectedReferentiel;
+                    if ($selectedReferentiel == 'referentiel' ) {
+                        return $apprenantsForCurrentPromo;
+                    }
+                    $apprenantsForSelectedReferentiel = array_filter($apprenantsForCurrentPromo, function($apprenant) use ($selectedReferentiel) {
+                        return $apprenant['referentiel'] === $selectedReferentiel;
+                    });
+
+                    $apprenantsForCurrentPromo = $apprenantsForSelectedReferentiel;
+                }
+
+
+                if (isset($_POST['idreferentiel'])) {
+                    $idreferentiel = $_POST['idreferentiel'];
+                    $apprenantsForSelectedReferentiel = array_filter($apprenantsForCurrentPromo, function($apprenant) use ($idreferentiel) {
+                        return $apprenant['referentiel'] === $idreferentiel;
+                    });
+                }
+
 
                 $elementparpagepromo=2;
                 $currentpagepromo=1;
@@ -72,16 +120,14 @@
                 // Par défaut, afficher les présences de la date du jour
                 $date = date("Y-m-d"); // Obtient la date du jour au format YYYY-MM-DD
                 $filteredPresences = filter_presence('statuts', 'referentiel', $date); // Filtrer par date du jour
-                $elementparpagepresent=2;
+                $elementparpagepresent=5;
                 $currentpagepresent=1;
                 $totalItemspresent = count($filteredPresences);
                 $totalPagespresent = ceil($totalItemspresent / $elementparpagepresent);
                 $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
             
 
-
                 if(isset($_POST['currentpagepresent'])){
-                
                     $currentpagepresent = $_POST['currentpagepresent'];
                     $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
                         
@@ -92,9 +138,10 @@
 
                     include("../templates/" . $_POST['page'] . ".html.php");
                     $_SESSION['page'] = $_POST['page'];
-
                 }
-                  
+
+                
+
                 if(isset($_POST['filtre']) && $_POST['filtre'] == 'filtre'){
                     $status = $_POST['statuts'];
                     $referentiel = $_POST['referentiel'];
@@ -130,7 +177,7 @@
                     $motfiltre = $_POST['recherchefiltre'];
                     $_SESSION['motfiltre'] = $motfiltre;
                     require_once("../models/recherches.model.php");
-                    $students= seachUser($students,$motfiltre);
+                    $apprenantsForCurrentPromo= seachUser($apprenantsForCurrentPromo,$motfiltre);
                     require_once("../templates/utilisateurs.html.php");
                 }
                 

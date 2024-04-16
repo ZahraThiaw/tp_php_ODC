@@ -9,3 +9,23 @@ Ref_Dig,"Référent Digital",Active,5
 Aws,Aws,Désactive,5
 Hackeuse,Hackeuse,Active,5
 Dev_Data,"Développement Data",Active,5
+Dev_Web,"Dev Web/Mobile",Active,4
+Ref_Dig,"Référent Digital",Active,4
+Aws,Aws,Désactive,4
+Hackeuse,Hackeuse,Active,4
+Dev_Data,"Développement Data",Active,4
+Dev_Web,"Dev Web/Mobile",Active,3
+Ref_Dig,"Référent Digital",Active,3
+Aws,Aws,Désactive,3
+Hackeuse,Hackeuse,Désactive,3
+Dev_Data,"Développement Data",Active,3
+Dev_Web,"Dev Web/Mobile",Active,2
+Ref_Dig,"Référent Digital",Désactive,2
+Aws,Aws,Désactive,2
+Hackeuse,Hackeuse,Désactive,2
+Dev_Data,"Développement Data",Active,2
+Dev_Web,"Dev Web/Mobile",Active,1
+Ref_Dig,"Référent Digital",Désactive,1
+Aws,Aws,Désactive,1
+Hackeuse,Hackeuse,Désactive,1
+Dev_Data,"Développement Data",Désactive,1

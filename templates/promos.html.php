@@ -37,7 +37,13 @@
                                 <td><?= $promo['datedebut'] ?></td>
                                 <td><?= $promo['datefin'] ?></td>
                                 <td style="color : <?= $promo['etat'] == "Terminée" ? "red" : "green" ?> ";><?= $promo['etat'] ?></td>
-                                <td><input type="checkbox" name="" id=""></td>
+                                <td>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="page" value="promos">
+                                        <input type="hidden" name="changePromo" value="<?= $promo['idpromo'] ?>">
+                                        <button class="btneditpromo" type="submit"><i class="<?= $promo['etat'] === 'En cours' ? "fa-sharp fa-thin fa-square-check editicon fa-solid" : "fa-sharp fa-thin fa-square editicon fa-solid"?>"></i></button>
+                                    </form> 
+                                </td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

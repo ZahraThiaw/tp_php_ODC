@@ -156,8 +156,19 @@
                         position: absolute;
                         left: 12%;
                         top: 25%;
-                    
-
+                    }
+                    form{
+                        width: 100%;
+                        height: 100%;
+                        button{
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            background-color: transparent;
+                            i{
+                                font-size: 1vw;
+                            }
+                        }
                     }
                 }
             }

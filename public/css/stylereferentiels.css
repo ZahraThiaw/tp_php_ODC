@@ -35,6 +35,7 @@
     height: 49%;
     display: flex;
     flex-direction: column;
+    text-align: center;
     background-color: #fff;
     border-radius: 10px;
     margin-right: 1%;
@@ -44,6 +45,7 @@
 .conteneurreferentiels .bodyreferentiels .referentielsreferentiels .referentiel .troispoint{
     font-size: 2vw;
     margin-bottom: 8%;
+    margin-right: 100%;
 }
 .conteneurreferentiels .bodyreferentiels .referentielsreferentiels .referentiel img{
     width: 100%;
@@ -51,7 +53,13 @@
     margin-left: 0;
     margin-bottom: 5%;
 }
-.conteneurreferentiels .bodyreferentiels .referentielsreferentiels .referentiel .nomreferentiel{
+.conteneurreferentiels .bodyreferentiels .referentielsreferentiels .referentiel form button{
+    font-size: 1vw;
+    background-color: transparent;
+    border: none;
+    
+}
+.conteneurreferentiels .bodyreferentiels .referentielsreferentiels .referentiel form button .nomreferentiel{
     font-size: 1vw;
     margin-bottom: 5%;
     text-align: center;

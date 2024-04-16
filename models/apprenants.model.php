@@ -10,7 +10,7 @@ function redirect($url)
 
 // fonction pour affivher tous les etudiants
 function findAllStudents(){
-    // $student = [
+    // $student = [['referentiel']
        
     //     [
     //         "nom" => 'Mbow',
@@ -25,7 +25,7 @@ function findAllStudents(){
     //         "email" => 'fantatine18@gmail.com',
     //         "genre" => 'F',
     //         "telephone" => '785286330',
-    //     ], 
+    //     ], ['referentiel']
     //     [ 
     //         "nom" => 'Wade',
     //         "prenom" => 'Aldemba',
@@ -100,5 +100,20 @@ function filter_apprenant($nom, $prenom, $email, $genre, $telephone) {
     }
     
 }
+
+function filterTable($Allapprenants, $referentiel) {
+    if ($referentiel == 'apprenants') {
+        return $Allapprenants;
+    }
+
+    $filteredData = array_filter($Allapprenants, function($item) use ($referentiel) {
+        return $item['referentiel'] == $referentiel;
+    });
+
+    return $filteredData;
+}
+
+
+//onchange="this.form.submit()"
 
 ?>

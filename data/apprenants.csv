@@ -1,6 +1,18 @@
-nom,prenom,email,genre,telephone
-Mbow,"Baye Saer",mbowbayesaer44@gmail.com,M,777220308
-Tine,"Fanta Ndao",fantatine18@gmail.com,F,785286330
-Wade,Aldemba,Ldmbwade@gmail.com,M,772716990
-Diagne,"Mouhamadou Moustapha",mousdef34@gmail.com,M,785953562
-Sow,"Mouhamadou Bobo",mbowbayesaer44@gmail.com,M,777930609
+nom,prenom,email,genre,telephone,idpromo,referentiel
+Mbow,"Baye Saer",mbowbayesaer44@gmail.com,M,777220308,6,"Dev Web/Mobile"
+Tine,"Fanta Ndao",fantatine18@gmail.com,F,785286330,6,"Dev Web/Mobile"
+Wade,Aldemba,Ldmbwade@gmail.com,M,772716990,6,"Dev Web/Mobile"
+Diagne,"Mouhamadou Moustapha",mousdef34@gmail.com,M,785953562,6,"Dev Web/Mobile"
+Sow,"Mouhamadou Bobo",mbowbayesaer44@gmail.com,M,777930609,6,"Dev Web/Mobile"
+FAYE,Ibrahima,fayeibrahima7@gamil?com,M,771909638,6,"Développement Data"
+Kanteye,thiara,kthiara6@gmail.com,M,772509700,6,"Développement Data"
+FALL,"sokhna mame diarra",smdfall24@gamil.com,M,776480120,6,"Développement Data"
+FALL,"mohamed abdoullah",maf123@gamil.com,M,785844966,6,"Développement Data"
+Khadim,Deme,demek90@gmail.com,M,778783197,6,"Référent Digital"
+DIAGNE,ASSANE,assaned345@gmail.com,M,770968798,6,"Référent Digital"
+COLY,"Ndeye mareme badiane",ndeyembc678@gmail.com,M,771249834,6,"Référent Digital"
+Diop,Mariame,mdiop5@gmail.com,F,785647389,6,Hackeuse
+Fall,Mouhamed,mouhafall78@gmail.com,M,773452678,6,Aws
+FALL,Mohamed,mfall23@gamil.com,M,777846496,5,"Développement Data"
+Khady,Diop,kdiop89@gmail.com,F,783783997,5,"Référent Digital"
+Aicha,Dieng,ad456@gmail.com,F,773456289,5,"Dev Web/Mobile"

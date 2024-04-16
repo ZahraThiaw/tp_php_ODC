@@ -1,4 +1,4 @@
-            <div class="bodyutilisateurs">
+              <div class="bodyutilisateurs">
                     <div class="promoutilisateurs">
                         <div class="promotionsutilisateurs"><h3>Promotions</h3></div>
                         <div class="promosutilisateurs"><p>Promos . Liste . Détails . Apprenants</p></div>
@@ -10,11 +10,15 @@
                         <div class="span">
                           <h3>Référentiel: 
                             <span style="color: #088F89;">
-                              <select style="color: #088F89;" name="" id="">
-                                    <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
-                                      <option value="<?= $referentiel['referentiel'] ?>"><span class="nomreferentiel"><?= $referentiel['referentiel'] ?></span></option>
-                                    <?php endforeach; ?>
-                              </select>
+                              <form action="" method="post">
+                                <input type="hidden" name="page" value="utilisateurs">
+                                <select style="color: #088F89;" name="appreferentiel" onchange="this.form.submit()">
+                                      <option value="referentiel">Apprenants</option>
+                                      <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
+                                        <option value="<?= $referentiel['referentiel'] ?>" <?= $_SESSION['appreferentiel']=== $referentiel['referentiel'] ? "selected" : ""?>><span class="referentiel"><?= $referentiel['referentiel'] ?></span></option>
+                                      <?php endforeach; ?>
+                                </select>
+                              </form>
                             </span>
                           </h3> 
                         </div>
@@ -57,11 +61,12 @@
                                             <th>Email</th>
                                             <th>Genre</th>
                                             <th>Téléphone</th>
+                                            <th>Référentiel</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($students as $student): ?>
+                                        <?php foreach($apprenantsForCurrentPromo as $student): ?>
                                         <tr>
                                             <td><div class="img1"><img src="images/tete.png" alt=""></div></td>
                                             <td ><span style="color: #417b33;"><?= $student['nom']?></span></td>
@@ -69,6 +74,7 @@
                                             <td><?= $student['email']?></td>
                                             <td><?= $student['genre']?></td>
                                             <td><?= $student['telephone']?></td>
+                                            <td><?= $student['referentiel']?></td>
                                             <td><input type="checkbox" class="checkbox"></td>
                                         </tr>
                                         <?php endforeach; ?>

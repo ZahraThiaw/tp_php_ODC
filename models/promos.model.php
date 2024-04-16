@@ -53,4 +53,27 @@ function findAllPromos(){
 }
 
 
+function promotionCheck($idPromoActive, $idPromoInactive){
+    $promos = array_map('str_getcsv', file(filepromos));
+
+    // Désactiver la promotion active
+    foreach($promos as $key => $promo){
+        if($promo[0] == $idPromoActive){
+            $promos[$key][4] = 'Terminée';
+        }
+        if($promo[0] == $idPromoInactive){
+            $promos[$key][4] = 'En cours';
+        }
+    }
+
+// Enregistrer les modifications dans le fichier CSV
+        $fp = fopen(filepromos, 'w');
+        foreach ($promos as $promo) {
+            fputcsv($fp, $promo);
+        }
+        fclose($fp);
+        //return $promos;
+    }
+
+
 ?>
