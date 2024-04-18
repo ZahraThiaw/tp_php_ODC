@@ -1,7 +1,7 @@
 
 <div class="content-presences">
     <div class="promopresences">
-        <div class="promotionspresences"><h2>Presences</h2></div>
+        <div class="promotionspresences"><h2>Presences <span style="color: #088F89;"><?= $currentPromo['libelle'] ?></span></h2></div>
         <div class="promospresences"><p>Presences . Listes</p></div>
     </div>
     <div class="contenu-presences">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="select2">
                     <select name="referentiel" id="selectreferentiel">
-                        <Option value="referentiel">Référentiel</Option>
+                        <Option value="referentiel"  <?= $_SESSION['user']['role'] === 'Apprenant' ? 'disabled' : ''?>>Référentiel</Option>
                         <Option value="Dev Web/Mobile" <?= $_SESSION['referentiel']== "Dev Web/Mobile" ? "selected" : ""?>>Dev Web/Mobile</Option>
                         <Option value="Référent Digital" <?= $_SESSION['referentiel']== "Référent Digital" ? "selected" : ""?>>Référent Digital</Option>
                         <Option value="Développement Data" <?= $_SESSION['referentiel']== "Développement Data" ? "selected" : ""?>>Développement Data</Option>
@@ -43,7 +43,7 @@
                     <th>Heure d'arrivée</th>
                     <th>Status</th>
                 </tr>
-                <?php  foreach($paginationpresence as $studentspresent): ?> 
+                <?php  foreach($presentspromo as $studentspresent): ?> 
                     <?php //foreach($presencesPaginees as $studentspresent): ?>
 
                 <tr>

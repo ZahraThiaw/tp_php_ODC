@@ -2,14 +2,12 @@
         <img src="images/Logo-Sonatel-Academy.png" alt="logo Sonatel Academy">
         <form action="" method="post">
             <div class="infoslogin">
-                <div>
-                    <p>Email et Mot de passe Requis</p>
-                </div>
+                <span style="color: red;"><?= $connexion_error ?></span>
                 <label for="email">Email Adress <span>*</span></label>
-                <input type="email" name="email" id="email" placeholder="Enter email adress *">
+                <input type="text" name="email" id="email" placeholder="Enter email adress *">
+                <span style="color: red;"><?= $error_message ?></span>
                 <label for="password">Password <span>*</span></label>
-                <input type="password" name="password" id="password" placeholder="Enter your password *"> <i class="fa-solid fa-eye-slash"></i>
-                
+                <input type="password" name="password" id="password" placeholder="Enter your password *">
             </div>
             <div class="sauvegarde">
                 <div>
@@ -19,9 +17,8 @@
                 <p>Mot de passe Oublié?</p>
             </div>
             <div class="connecter"> 
-                    <input type="hidden" name="page" value="promos">
+                    <!-- <input type="hidden" name="page" value="promos"> -->
                     <button type="submit">Log In</button>
-                
             </div>
         </form>
 </div>

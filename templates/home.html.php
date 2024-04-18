@@ -10,12 +10,14 @@
     <div class="container">
 
         <?php
-            SESSION_start();
             require_once("../templates/partial/menu.html.php");
         ?>
         <div class="contenu">
             <?php
                 require_once("../templates/partial/header.html.php");
+                if(isset($_POST['deconnexion']) && $_POST['deconnexion'] == 'deconnexion'){
+                    require_once("../templates/connexion.html.php");
+                }
             ?>
             <div class="bodycontenu">
                 
@@ -96,16 +98,17 @@
                     $apprenantsForSelectedReferentiel = array_filter($apprenantsForCurrentPromo, function($apprenant) use ($idreferentiel) {
                         return $apprenant['referentiel'] === $idreferentiel;
                     });
+                    $apprenantsForCurrentPromo = $apprenantsForSelectedReferentiel;
                 }
-
+                
 
                 $elementparpagepromo=2;
                 $currentpagepromo=1;
                 $totalItemspromo = count($promos);
                 $totalPagespromo = ceil($totalItemspromo / $elementparpagepromo);
                 $paginationpromo=paginateTable($promos, $elementparpagepromo, $currentpagepromo);
-                
 
+                
 
                 if(isset($_POST['currentpagepromo'])){
                 
@@ -117,6 +120,7 @@
 
                 $studentpresent = generateStudentspresents();
 
+
                 // Par défaut, afficher les présences de la date du jour
                 $date = date("Y-m-d"); // Obtient la date du jour au format YYYY-MM-DD
                 $filteredPresences = filter_presence('statuts', 'referentiel', $date); // Filtrer par date du jour
@@ -125,11 +129,24 @@
                 $totalItemspresent = count($filteredPresences);
                 $totalPagespresent = ceil($totalItemspresent / $elementparpagepresent);
                 $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
-            
+                if($currentreferentiel){
+                    $presentpagines=$paginationpresence;
+                    // Filtrer les apprenants pour les referentiel actifs de la promotion en cours
+                    $presentspromo = array_filter($presentpagines, function($present) use ($currentreferentiel) {
+                        return $present['idpromo'] === $currentreferentiel['idpromo'];
+                    });
+                }
 
                 if(isset($_POST['currentpagepresent'])){
                     $currentpagepresent = $_POST['currentpagepresent'];
                     $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
+                    if($currentreferentiel){
+                        $presentpagines=$paginationpresence;
+                        // Filtrer les apprenants pour les referentiel actifs de la promotion en cours
+                        $presentspromo = array_filter($presentpagines, function($present) use ($currentreferentiel) {
+                            return $present['idpromo'] === $currentreferentiel['idpromo'];
+                        });
+                    }
                         
                 }
 
@@ -155,6 +172,13 @@
 
                     $filteredPresences = filter_presence($status, $referentiel, $date);
                     $paginationpresence=paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
+                    if($currentreferentiel){
+                        $presentpagines=$paginationpresence;
+                        // Filtrer les apprenants pour les referentiel actifs de la promotion en cours
+                        $presentspromo = array_filter($presentpagines, function($present) use ($currentreferentiel) {
+                            return $present['idpromo'] === $currentreferentiel['idpromo'];
+                        });
+                    }
                 
 
 
@@ -162,11 +186,19 @@
                     
                         $currentpagepresent = $_POST['currentpagepresent'];
                         $paginationpresence = paginateTable($filteredPresences, $elementparpagepresent, $currentpagepresent);
+                        if($currentreferentiel){
+                            $presentpagines=$paginationpresence;
+                            // Filtrer les apprenants pour les referentiel actifs de la promotion en cours
+                            $presentspromo = array_filter($presentpagines, function($present) use ($currentreferentiel) {
+                                return $present['idpromo'] === $currentreferentiel['idpromo'];
+                            });
+                        }
                             
                     }
                     require_once("../templates/presences.html.php");
 
                 }
+
 
                 if(isset($_POST['page']) && $_POST['page'] == 'mot'){
                     $page = $_SESSION['page'];

@@ -19,6 +19,65 @@
 </head>
 <body>
     <?php
+    session_start();
+        require_once("../data/file.csv.php");
+        require_once("../config/bootstrap.php");
+        require_once("../models/users.model.php");
+        require_once("../config/validator.php");
+        // $data = lireFile(fileusers);
+        // $new = [];
+        // foreach($data as $dt){
+        //     $dt['password'] = hashPassword($dt['password']);
+        //     $new[] = $dt;
+        // }
+        // // var_dump($new);
+        // // die();
+        // ecrirefile(fileusers, $new);
+        
+        $error_message = "";
+        $connexion_error = ""; // Erreur de connexion invalide
+
+        // Vérifier les informations de connexion (e-mail et mot de passe)
+        if (isset($_POST['email']) && isset($_POST['password'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $users=findAllUsers();
+
+            if (!isEmailValid($email)) {
+                $error_message = "Veuillez saisir une adresse e-mail valide.";
+            } else {
+                $user = null;
+                foreach($users as $u){
+                    if($u['email'] === $email && verifyPassword($password, $u['password'])){
+                        $user = $u;
+                        break;
+                    }
+                }
+
+                //Si l'utilisateur est authentifier, afficher le contenu de la page d'accueil
+                if($user){
+                    //Stocker l'utilisateur dans la session
+                    $_SESSION['user'] = $user;
+
+                    //Redirection vers la page d'accueil en fonction du rôle de l'utilisateur
+                    if($user['role'] === 'Admin'){
+                        $_POST['page'] = 'promos';
+                        // header("Location: promos.html.php");
+                        // exit();
+                    }elseif ($user['role'] === 'Apprenant'){
+                        $_POST['page'] = 'presences';
+                        // header("Location: presences.html.php");
+                        // exit();
+                    }
+                }else{
+                    //Si l'utilisateur n'est pas authentifier, afficher le contenu de la page de connexion
+                    $connexion_error = "Email ou mot de passe invalide.";
+                    require_once("../templates/connexion.html.php");
+                }
+            }
+        }
+
+
         if(!isset($_POST['page'])){
             require_once("../templates/connexion.html.php");
         }

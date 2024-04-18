@@ -8,11 +8,11 @@
                     <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
                     <div class="referentiel">
                         <span class="troispoint">...</span>
-
+                        
                         <img src="../public/images/classe.jpeg" alt="classe">
                         <form action="" method="post">
                             <input type="hidden" name="page" value="utilisateurs">
-                            <input type="hidden" name="referentiel" value="<?= $referentiel['referentiel'] ?>">
+                            <input type="hidden" name="idreferentiel" value="<?= $referentiel['referentiel'] ?>">
                             <button type="submit"><span class="nomreferentiel"><?= $referentiel['referentiel'] ?></span></button>
                         </form>
                         <span class="etatreferentiel"><?= $referentiel['etatreferentiel'] ?></span>

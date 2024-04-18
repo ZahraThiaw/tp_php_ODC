@@ -19,11 +19,14 @@
         <div class="utilisateur">
             <div class="profileuser"><i class="fa-solid fa-user"></i></div>
             <div class="users">
-                <div class="typeuser">FATIMATA_THIAW</div>
+                <div class="typeuser"><?=$_SESSION['user']['prenom'].'_'.$_SESSION['user']['nom']?></div>
                 <div class="nomuser">
-                    <select name="nomuser" id="nomuser">
-                        <option value="nomuser">Admin Admin</option>
-                    </select>
+                    <form action="" method="post">
+                        <select name="nomuser" id="nomuser" onchange="this.form.submit()">
+                            <option value="nomuser"><?= $_SESSION['user']['role'] ?></option>
+                            <option name="deconnexion" value="deconnexion">Deconnexion</option>
+                        </select>
+                    </form>
                 </div>
             </div>
         </div>

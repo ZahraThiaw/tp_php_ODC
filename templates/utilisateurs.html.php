@@ -31,7 +31,7 @@
                         <div class="containerIntern">
                             <div class="numeroaprenant"><h3>Apprenants</h3></div>
                             <div class="divhaut">
-                                <span><h3>Liste Des Apprenants <span style="color: #009186;">(50)</span></h3></span>
+                                <span><h3>Liste Des Apprenants <span style="color: #009186;">(<?php echo count($apprenantsForCurrentPromo) ?>)</span></h3></span>
                                 <div class="btns">
                                     <a href="#targetnouveau" class="nouveau">+ Nouveau</a>
                                     <a href="#targetapprenantparmasse" class="clickmass">+ Insertion en masse</a>
