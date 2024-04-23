@@ -8,6 +8,7 @@
                 <span style="color: red;"><?= $error_message ?></span>
                 <label for="password">Password <span>*</span></label>
                 <input type="password" name="password" id="password" placeholder="Enter your password *">
+                <span style="color: red;"><?= $error_message_password ?></span>
             </div>
             <div class="sauvegarde">
                 <div>

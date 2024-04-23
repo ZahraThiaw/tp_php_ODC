@@ -11,16 +11,25 @@ function findAllUsers() {
     //         'image' => 'admin.png'
     //     ],
     //     [
-    //         'iduser'=>'P6_DEVWEB_2024_23',
+    //         'iduser'=>2,
     //         'email' => 'thiaw2024@gmail.com',
     //         'password' => 'apprenant',
     //         'role' => 'Apprenant',
     //         'prenom' => 'FATIMATA',
     //         'nom' => 'THIAW',
     //         'image' => 'apprenant.png'
+    //     ],
+    //     [
+    //         'iduser'=>3,
+    //         'email' => 'sy2024@gmail.com',
+    //         'password' => 'apprenant',
+    //         'role' => 'Apprenant',
+    //         'prenom' => 'OUMAR',
+    //         'nom' => 'SY',
+    //         'image' => 'apprenant.png'
     //     ]
     // ];
-    //ecrirefile(fileusers, $user);
+    // ecrirefile(fileusers, $user);
     $user = lireFile(fileusers);
     return $user;
 }

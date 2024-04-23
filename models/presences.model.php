@@ -238,6 +238,32 @@ function filter_presence($status, $referentiel, $date) {
     
 }
 
+// Fonction pour filtrer les présences par statut
+function filterPresenceByStatus($presences, $statut) {
+    if($statut === 'statuts'){
+        return $presences;
+    }
+    if($statut !== 'statuts'){
+        return array_filter($presences, function($presence) use ($statut) {
+            return $presence['statuts'] === $statut;
+        });
+    }
+}
+
+// Fonction pour filtrer les présences par date
+function filterPresenceByDate($presences, $date) {
+    if($date === ''){
+        $statut=$_SESSION['statuts'];
+        $presences = filterPresenceByStatus($presences, $statut);
+        return $presences;
+    }
+    return array_filter($presences, function($presence) use ($date) {
+        // Supposons que la date de présence est stockée dans une clé 'date_presence'
+        // Vous devrez ajuster cette condition selon la structure de vos données
+        return $presence['date'] === $date;
+    });
+}
+
 function generateStudentspresentspagines($page, $elementsPerPage) {
     $allStudents = generateStudentspresents();
     $totalItems = count($allStudents);
@@ -272,4 +298,38 @@ function paginateTable($array, $pageSize, $currentPage) {
     $startIndex = ($currentPage - 1) * $pageSize;
     $pagedArray = array_slice($array, $startIndex, $pageSize);
     return  !empty($pagedArray) ?$pagedArray: $array;
+}
+
+
+function getStudentPresencesByUserId($userId) {
+    // Spécifiez le chemin d'accès du fichier CSV
+    $csvFile = filepresences;
+
+    // Ouvrez le fichier CSV en mode lecture
+    $fileHandle = fopen($csvFile, 'r');
+
+    // Lisez les lignes du fichier CSV
+    while (($line = fgetcsv($fileHandle)) !== false) {
+        // Vérifiez si l'ID de l'utilisateur correspond
+        if ($line[9] == $userId) {
+            // Ajoutez les données de la ligne au tableau des présences
+            $studentspresent[] = [
+                'Matricule' => $line[0],
+                'Nom' => $line[1],
+                'Prenom' => $line[2],
+                'Telephone' => $line[3],
+                'referentiel' => $line[4],
+                'date' => $line[5],
+                'Heure d\'arrivee' => $line[6],
+                'statuts' => $line[7],
+                'idpromo' => $line[8],
+                'iduser' => $line[9],
+            ];
+        }
+    }
+
+    // Fermez le fichier CSV
+    fclose($fileHandle);
+
+    return $studentspresent;
 }

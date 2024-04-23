@@ -84,13 +84,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
 }
 .conteneurreferentiels .bodyreferentiels .nouveauxreferentiel form label{
     font-size: 1vw;
     margin-bottom: 1%;
 }
-.conteneurreferentiels .bodyreferentiels .nouveauxreferentiel form .icone1{
+
+/* .conteneurreferentiels .bodyreferentiels .nouveauxreferentiel form .icone1{
     position: absolute;
     left: 1%;
     top: 30%;
@@ -103,7 +103,7 @@
     top: 65%;
     font-size: 1.5vw;
     padding-left: 10%;
-}
+} */
 .conteneurreferentiels .bodyreferentiels .nouveauxreferentiel form input{
     display: flex;
     justify-content: center;
@@ -117,6 +117,7 @@
     color: #6d6d6d;
     text-transform: uppercase;
 }
+
 .conteneurreferentiels .bodyreferentiels .nouveauxreferentiel form textarea{
     display: flex;
     justify-content: center;
@@ -140,4 +141,45 @@
     color: #fff;
     text-transform: uppercase;
     margin-left: 25%;
+}
+
+.switch {
+	display: inline-block;
+	position: relative;
+	width: 20%;
+	height: 20%;
+	cursor: pointer;
+	overflow: hidden;
+}
+.switch input {
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	width: 0;
+	height: 0;
+}
+.switch input + span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #99b4df;
+    border-radius: 20px;
+}
+.switch input + span:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 4px;
+	width: 30px;
+	height: 30px;
+	background: rgb(21, 93, 247);
+	border-radius: 50%;
+	transform: translateY(-50%);
+	transition: all .5s;
+}
+.switch input:checked + span:before {
+	left: 50%;
 }

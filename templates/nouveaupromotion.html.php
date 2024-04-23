@@ -11,27 +11,36 @@
         </div>
         <div class="bodynouveaupromodroit">
             <div class="bodynouveaupromodroit1"><h2>Promotion</h2></div>
-            <div class="bodynouveaupromodroit2">
-                <label for="libelle">Libelle</label>
-                <input type="text" name="libelle" id="libelle" placeholder="Entrer le libelle *">
-            </div>
-            <div class="bodynouveaupromodroit3">
-                <div class="datedebut">
-                    <label for="datedebut">Date Début</label>
-                    <input type="date" name="datedebut" id="datedebut" placeholder="MM/DD/YYYY *">
+            <form action="" method="post" class="nouveaupromotion">
+                <div class="bodynouveaupromodroit2">
+                    <label for="libelle">Libelle</label>
+                    <input class="libellepromo" type="text" placeholder="entrez le libelle" name ="libelle_promo" value="<?php if(isset($_SESSION['libelle_promo'])) echo($_SESSION['libelle_promo']) ?>"/>
+                    <span style="color: red;"><?= $erreur_libelle_promo ?></span>
                 </div>
-                <div class="datefin">
-                    <label for="datefin">Date Fin</label>
-                    <input type="date" name="datefin" id="datefin" placeholder="MM/DD/YYYY *">
+                <span style="color: red;"><?= $erreur_duree ?></span>
+                <div class="bodynouveaupromodroit3">
+                    <div class="datedebut">
+                        <label for="datedebutpromo">Date Début</label>
+                        <input class="datedebutpromo" type="date"  name="date1" placeholder="MM/DD/YYYY *" value="<?php if(isset($_SESSION['date1'])) echo($_SESSION['date1']) ?>"/>
+                        <span style="color: red;"><?= $erreur_date_debut ?></span>
+                    </div>
+                    <div class="datefin">
+                        <label for="datefinpromo">Date Fin</label>
+                        <input class="datefinpromo" type="date"  name="date2" placeholder="MM/DD/YYYY *" value="<?php if(isset($_SESSION['date2'])) echo($_SESSION['date2']) ?>" />
+                        <span style="color: red;"><?= $erreur_date_fin ?></span>
+                    </div>
                 </div>
-            </div>
-            <div class="bodynouveaupromodroit4">
-                <form action="" method="post">
-                    <input type="hidden" name="page" value="nouveaureferentiel">
-                    <button>Ajouter Référentiel(s)</button>
-                </form>
-                <button>Créer Promotion</button>
-            </div>
+                <div class="bodynouveaupromodroit4">
+                    <div class="nouveaureferentiel">
+                        <input type="hidden" name="page" value="nouveaupromotion"> 
+                        <button type="submit" name="ajoutreferentiel" value="ajoutreferentiel">Ajouter referentielle</button>
+                    </div>
+                    <div class="nouveaupromotion">
+                        <button type="submit" name="nouveaupromotion" value="nouveaupromotion">Créer Promotion</button>
+                    </div>
+                </div>
+            </form>
+
             <div class="bodynouveaupromodroit5"><h2>Référentiels</h2></div>
         </div>
     </div>

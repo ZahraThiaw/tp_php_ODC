@@ -10,15 +10,42 @@
                         <div class="span">
                           <h3>Référentiel: 
                             <span style="color: #088F89;">
-                              <form action="" method="post">
-                                <input type="hidden" name="page" value="utilisateurs">
-                                <select style="color: #088F89;" name="appreferentiel" onchange="this.form.submit()">
-                                      <option value="referentiel">Apprenants</option>
-                                      <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
-                                        <option value="<?= $referentiel['referentiel'] ?>" <?= $_SESSION['appreferentiel']=== $referentiel['referentiel'] ? "selected" : ""?>><span class="referentiel"><?= $referentiel['referentiel'] ?></span></option>
-                                      <?php endforeach; ?>
-                                </select>
-                              </form>
+                              <input type="checkbox" id="toggleReferentiels" name="toggleReferentiels" style="display: none;" <?= (isset($_POST['toggleReferentiels'])) ? "checked" : "" ?>>
+                              <label for="toggleReferentiels" class="clickreferentiel">Référentiels</label>
+                              <div class="formreferentiel" <?= (isset($_POST['toggleReferentiels']) || isset($_POST['appreferentiel'])) ? "style='display: block;'" : "" ?>>
+                                 
+                                  <form action="" method="post">
+                                          <input type="hidden" name="page" value="utilisateurs">
+                                          <div>
+                                              <?php
+                                              $allReferentielsChecked = true;
+
+                                              if (isset($_POST['appreferentiel'])) {
+                                                  foreach($referentielsForCurrentPromo as $referentiel) {
+                                                      if (!in_array($referentiel['referentiel'], $_POST['appreferentiel'])) {
+                                                          $allReferentielsChecked = false;
+                                                      }
+                                                  }
+                                              }
+                                              ?>
+                                              <input type="checkbox" id="allreferentiel" name="appreferentiel[]" value="allreferentiel" <?= ($allReferentielsChecked) ? "checked" : "" ?> onchange="this.form.submit()">
+                                              <label for="allreferentiel"><span class="referentiel">Apprenants</span></label><br>
+                                              
+                                              <?php foreach($referentielsForCurrentPromo as $referentiel): ?>
+                                                  <input type="checkbox" id="<?= $referentiel['referentiel'] ?>" name="appreferentiel[]" value="<?= $referentiel['referentiel'] ?>" <?= (isset($_POST['appreferentiel']) && in_array($referentiel['referentiel'], $_POST['appreferentiel'])) ? "checked" : "" ?> onchange="this.form.submit()">
+                                                  <label for="<?= $referentiel['referentiel'] ?>"><span class="referentiel"><?= $referentiel['referentiel'] ?></span></label><br>
+                                              <?php endforeach; ?>
+                                          </div>
+                                          
+                                  </form>
+                                  <form action="" method="post" class="closereferentiel">
+                                    <button type="submit" name="page" value="utilisateurs" onclick ="document.getElementById('toggleReferentiels').style.display = 'none';">X</button>
+                                  </form>
+                                      
+
+                              </div>
+                              
+
                             </span>
                           </h3> 
                         </div>

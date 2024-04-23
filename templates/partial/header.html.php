@@ -17,7 +17,7 @@
     <div class="headpromodroit">
         <div class="date"><i class="fa-solid fa-calendar-days"></i> <?= date('d/m/Y') ?></div>
         <div class="utilisateur">
-            <div class="profileuser"><i class="fa-solid fa-user"></i></div>
+            <div class="profileuser"><img src="<?= "../public/images/".$_SESSION['user']['image'] ?>" alt="photo utilisateur"></div>
             <div class="users">
                 <div class="typeuser"><?=$_SESSION['user']['prenom'].'_'.$_SESSION['user']['nom']?></div>
                 <div class="nomuser">

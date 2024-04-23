@@ -3,5 +3,8 @@ idpromo,libelle,datedebut,datefin,etat
 2,"Promotion 2",2020-02-01,2020-11-30,Terminée
 3,"Promotion 3",2021-02-01,2021-11-30,Terminée
 4,"Promotion 4",2022-02-01,2022-11-30,Terminée
-5,"Promotion 5",2023-02-01,2023-11-30,"En cours"
+5,"Promotion 5",2023-02-01,2023-11-30,Terminée
 6,"Promotion 6",2024-02-01,2024-11-30,Terminée
+7,"Promotion 7",2024-04-22,2024-11-07,Terminée
+8,"Promotion 8",2024-04-23,2024-10-24,"En cours"
+9,"Promotion 9",2024-04-23,2024-09-23,Terminée

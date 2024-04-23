@@ -78,30 +78,44 @@
     margin-top: 1%;
     margin-bottom: 1%;
 }
-.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit2{
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit form {
     width: 100%;
-    height: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-top: 2%;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit form .bodynouveaupromodroit2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
     margin-bottom: 1%;
 }
-.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit2 label{
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit form .bodynouveaupromodroit2 label{
     font-size: 1.2vw;
 }
-.concontenupromotionstenu .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit2 input{
+.concontenupromotionstenu .bodynouveaupromo .bodynouveaupromodroit form .bodynouveaupromodroit2 input{
     font-size: 1.2vw;
     background-color: transparent;
-    height: 70%;
+    height: 100%;
     border-radius: 10px;
     border: 1px solid #6d6d6d;
     padding-left: 8%;
     color: #6d6d6d;
 }
+.libellepromo{
+    font-size: 1.2vw;
+    background-color: transparent;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #6d6d6d;
+    padding-left: 5%;
+    color: #6d6d6d;
+}
 .contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit3{
     width: 100%;
-    height: 40%;
+    height: 50%;
     display: flex;
     justify-content: space-between;
     margin-top: 1%;
@@ -153,15 +167,14 @@
     margin-top: 1%;
     margin-bottom: 1%;
 }
-.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 form{
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 .nouveaureferentiel{
     width: 20%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 form button{
-    color: #fff;
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 .nouveaureferentiel button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,14 +187,21 @@
     color: #fff;
     border: #0411ca 1px solid;
     border-radius: 5px;
+}
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 .nouveaupromotion{
+    width: 20%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 button{
-    width: 20%;
+.contenupromotions .bodynouveaupromo .bodynouveaupromodroit .bodynouveaupromodroit4 .nouveaupromotion button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     height: 100%;
+    padding: 5%;
     font-size: 1vw;
     font-weight: bold;
     background-color: #008F89;

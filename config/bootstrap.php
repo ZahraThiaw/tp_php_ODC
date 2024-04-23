@@ -5,5 +5,6 @@
     Define ("fileapprenants", "../data/apprenants.csv");
     Define ("filepresences", "../data/presences.csv");
     Define ("fileusers", "../data/users.csv");
+    Define ("fileallreferentiels", "../data/allreferentiels.csv");
 
 ?>
